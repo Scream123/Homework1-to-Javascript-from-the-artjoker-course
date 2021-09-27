@@ -1,7 +1,7 @@
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     function exponential(number, degree) {
-            let message = '';
+        let message = '';
         let exponent = 1;
 
         if (!Number.isInteger(degree) || degree <= 0) {
@@ -13,7 +13,8 @@
             }
         }
 
-      return document.getElementsByClassName('exponential-result')[0].innerHTML = message + "<br/>";
+        return document.getElementsByClassName('exponential-result')[0].innerHTML = message + "<br/>";
     }
-        exponential(2, 0);
+
+    exponential(2, 0);
 });
