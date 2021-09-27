@@ -2,27 +2,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Transpose Matrix
     let result = {};
+    let count_row_index = 3;
+    let count_column_index = 3;
 
     function transponse(matrix) {
 
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++) {
 
-                document.getElementsByClassName('matrix-result')[0].innerHTML += matrix[i][j] + " ";
+                document.getElementsByClassName('matrix-result')[0].innerHTML += matrix[row_index][column_index] + " ";
             }
             addLineTranslation('matrix-result')
         }
-        for (let i = 0; i < 3; i++) {
-            for (let j = i + 1; j < 3; j++) {
-                let n = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = n;
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index =row_index + 1; column_index < count_column_index; column_index++) {
+                let n = matrix[row_index][column_index];
+                matrix[row_index][column_index] = matrix[column_index][row_index];
+                matrix[column_index][row_index] = n;
             }
         }
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++)
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++)
 
-                document.getElementsByClassName('matrix-transpose-result')[0].innerHTML += matrix[i][j] + " ";
+                document.getElementsByClassName('matrix-transpose-result')[0].innerHTML += matrix[row_index][column_index] + " ";
             addLineTranslation('matrix-transpose-result')
         }
     }
@@ -36,22 +38,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function additionMatrix(matrix1, matrix2) {
 
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                document.getElementsByClassName('additionMatrix1-result')[0].innerHTML += matrix1[i][j] + " ";
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++) {
+                document.getElementsByClassName('additionMatrix1-result')[0].innerHTML += matrix1[row_index][column_index] + " ";
             }
             addLineTranslation('additionMatrix1-result')
         }
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                document.getElementsByClassName('additionMatrix2-result')[0].innerHTML += matrix2[i][j] + " ";
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++) {
+                document.getElementsByClassName('additionMatrix2-result')[0].innerHTML += matrix2[row_index][column_index] + " ";
             }
             addLineTranslation('additionMatrix2-result');
 
         }
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                result = matrix1[i][j] + matrix2[i][j];
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++) {
+                result = matrix1[row_index][column_index] + matrix2[row_index][column_index];
                 document.getElementsByClassName('additionMatrix-result')[0].innerHTML += result + " ";
             }
             addLineTranslation('additionMatrix-result');
@@ -103,13 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        for (let i = 0; i < 3; i++) {
+        for (let row_index = 0;row_index < count_row_index; row_index++) {
 
-            for (let j = 0; j < 3; j++) {
+            for (let column_index = 0; column_index < count_column_index; column_index++) {
 
-                if (result[i][j] !== undefined)
-                    if (result[i][j] !== undefined)
-                        document.getElementsByClassName('transform-matrix-result')[0].innerHTML += result[i][j] + " ";
+                if (result[row_index][column_index] !== undefined)
+                    if (result[row_index][column_index] !== undefined)
+                        document.getElementsByClassName('transform-matrix-result')[0].innerHTML += result[row_index][column_index] + " ";
             }
             addLineTranslation('transform-matrix-result')
         }
