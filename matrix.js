@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Transpose Matrix
     let result = {};
-    let count_row_index = 3;
-    let count_column_index = 3;
+    const count_row_index = 3;
+    const count_column_index = 3;
 
     function transponse(matrix) {
 
